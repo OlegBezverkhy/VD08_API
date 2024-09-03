@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Случайная цитата</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .result {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        h2 {
+            color: #e74c3c;
+        }
+        h3 {
+            margin: 10px 0;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+        h5 {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        .error {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Сайт со случайными цитатами</h1>
+    <div class="result">
+        {% if data %}
+            <h2>Свежая цитата</h2>
+            <h3>Автор: {{data['author']}}</h3>
+            <h3>Цитата:</h3>
+            <p>{{data['content']}}</p>
+            <h5>Дата: {{data['dateAdded']}}</h5>
+        {% else %}
+            <h5 class="error">Обнаружена ошибка, код:{{error}}</h5>
+        {% endif %}
+    </div>
+</body>
+</html>
